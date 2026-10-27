@@ -1,0 +1,87 @@
+{
+  "name": "storybook-addon-async-globals",
+  "version": "0.0.0",
+  "description": "Write Storybook globalTypes and initialGlobals with async functions; they resolve once per launch, with no imports.",
+  "keywords": [
+    "storybook-addons",
+    "storybook-addon",
+    "globals",
+    "globalTypes",
+    "toolbar",
+    "async",
+    "theming"
+  ],
+  "homepage": "https://github.com/ddamato/storybook-addon-async-globals#readme",
+  "bugs": "https://github.com/ddamato/storybook-addon-async-globals/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddamato/storybook-addon-async-globals.git"
+  },
+  "license": "MIT",
+  "author": "Donnie D'Amato",
+  "type": "module",
+  "exports": {
+    "./preset": {
+      "import": "./dist/preset.js",
+      "require": "./dist/preset.cjs"
+    },
+    "./runtime": "./dist/runtime.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "prebuild": "node -e \"fs.rmSync('dist', { recursive: true, force: true })\"",
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm build && pnpm test",
+    "fixtures:install": "node scripts/fixtures.mjs install",
+    "fixtures:build": "node scripts/fixtures.mjs build",
+    "e2e": "playwright test",
+    "fixtures:test": "node scripts/fixtures.mjs test",
+    "test:integration": "pnpm fixtures:install && pnpm fixtures:build && pnpm e2e && pnpm fixtures:test",
+    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "prepublishOnly": "pnpm check && pnpm test:integration"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "1.64.1",
+    "@types/node": "^22.20.5",
+    "auto-changelog": "^2.7.0",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "tsup": "^8.5.1",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.0",
+    "vite": "^7.3.7",
+    "vitest": "^5.0.5"
+  },
+  "peerDependencies": {
+    "storybook": ">=7.0.0",
+    "vite": ">=4.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "storybook": {
+    "displayName": "Async Globals",
+    "supportedFrameworks": [
+      "react"
+    ],
+    "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+  },
+  "packageManager": "pnpm@12.8.1"
+}

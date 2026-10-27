@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ocean",
+    "name": "Ocean",
+    "tokens": {
+      "color": "rgb(0, 0, 255)"
+    }
+  },
+  {
+    "id": "forest",
+    "name": "Forest",
+    "tokens": {
+      "color": "rgb(0, 128, 0)"
+    }
+  }
+]
