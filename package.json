@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "description": "Write Storybook globalTypes and initialGlobals with async functions; they resolve once per launch, with no imports.",
   "keywords": [
-    "storybook-addons",
     "storybook-addon",
+    "data-state",
     "globals",
     "globalTypes",
     "toolbar",
     "async",
-    "theming"
+    "theming",
+    "style"
   ],
   "homepage": "https://github.com/ddamato/storybook-addon-async-globals#readme",
   "bugs": "https://github.com/ddamato/storybook-addon-async-globals/issues",
@@ -81,7 +82,7 @@
     "supportedFrameworks": [
       "react"
     ],
-    "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+    "icon": "https://raw.githubusercontent.com/ddamato/storybook-addon-async-globals/main/assets/icon.png"
   },
   "packageManager": "pnpm@12.8.1"
 }
