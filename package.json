@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-async-globals",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Write Storybook globalTypes and initialGlobals with async functions; they resolve once per launch, with no imports.",
   "keywords": [
     "storybook-addons",
